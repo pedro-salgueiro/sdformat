@@ -22,6 +22,8 @@ endif()
 
 project (sdformat9)
 
+find_package(ignition-cmake2 REQUIRED)
+
 # The protocol version has nothing to do with the package version set below.
 # It represents the current version of sdformat implement by the software
 set (SDF_PROTOCOL_VERSION 1.7)
@@ -117,7 +119,7 @@ if (UNIX)
   message (STATUS "Using system tinyxml")
   set (USE_EXTERNAL_TINYXML True)
 elseif(WIN32)
-  message (STATUS "Using internal tinyxml code")
+  message (STATUS "Using internal tinyxml")
   set (USE_EXTERNAL_TINYXML False)
 else()
   message (STATUS "Unknown platform")

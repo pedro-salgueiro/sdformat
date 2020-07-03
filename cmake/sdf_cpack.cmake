@@ -15,6 +15,11 @@ list (APPEND CPACK_SOURCE_GENERATOR "TBZ2")
 list (APPEND CPACK_SOURCE_GENERATOR "ZIP")
 list (APPEND CPACK_SOURCE_IGNORE_FILES ";TODO;/.hg/;.swp$;/build/")
 
+if(CMAKE_BUILD_TYPE STREQUAL "Debug")
+  SET(CMAKE_INSTALL_DEBUG_LIBRARIES true)
+  SET(CMAKE_INSTALL_DEBUG_LIBRARIES_ONLY true)
+endif()
+
 include (InstallRequiredSystemLibraries)
 
 #execute_process(COMMAND dpkg --print-architecture _NPROCE)
